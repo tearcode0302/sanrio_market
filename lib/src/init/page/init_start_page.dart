@@ -5,7 +5,12 @@ import 'package:sanrio_market/src/common/components/app_font.dart';
 import '../../common/components/btn.dart';
 
 class InitStartPage extends StatelessWidget {
-  const InitStartPage({super.key});
+  final Function() onStart;
+
+  const InitStartPage({
+    super.key,
+    required this.onStart,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +46,16 @@ class InitStartPage extends StatelessWidget {
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(
-          left: 25, right: 25, bottom: 25 + Get.mediaQuery.padding.bottom
+            left: 25, right: 25, bottom: 25 + Get.mediaQuery.padding.bottom),
+        child: Btn(
+          onTap: onStart,
+          child: const AppFont(
+            '시작하기',
+            align: TextAlign.center,
+            size: 18,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-        child: const Btn(),
       ),
     );
   }
