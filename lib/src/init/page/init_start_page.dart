@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sanrio_market/src/common/components/app_font.dart';
 
+import '../../common/components/btn.dart';
+
 class InitStartPage extends StatelessWidget {
   const InitStartPage({super.key});
 
@@ -39,23 +41,9 @@ class InitStartPage extends StatelessWidget {
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(
-            left: 25, right: 25, bottom: 25 + Get.mediaQuery.padding.bottom),
-        child: GestureDetector(
-          onTap: () {},
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(7),
-            child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 15),
-              color: Colors.pink,
-              child: const AppFont(
-                '시작하기',
-                align: TextAlign.center,
-                size: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
+          left: 25, right: 25, bottom: 25 + Get.mediaQuery.padding.bottom
         ),
+        child: const Btn(),
       ),
     );
   }
